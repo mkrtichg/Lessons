@@ -79,7 +79,7 @@ function myFindIndex(callback, array, value) {
 
 // findLastIndex
 
-arr.push(4, 3, 2, 1);
+arr.push(4, 3, 2, 1);  // since this step the array modified, now it's  [1, 2, 3, 4, 5, 4, 3, 2, 1]
 
 myFindLastIndex(function (value, el, index, array) {
     if ((el === value)) {
