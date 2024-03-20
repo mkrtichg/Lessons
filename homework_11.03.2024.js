@@ -123,3 +123,60 @@ function drawTree2(arr, list) {
    
 
 }
+
+
+// edited 20.03.2024 16:56
+// tree1 for loop
+
+
+// for loop
+
+function drawTree1(arr, list) {
+    debugger;
+    let main;
+
+    let arrNull = arr.filter(item => item.parentId === null)
+    for (let obj of arrNull) {
+        list[obj.id] = {}
+    }
+
+
+
+    for(let obj of arr){
+        let keys = Object.keys(list);
+        if(keys.length === 0){
+            return
+        }
+    for (let key of keys) {
+        let branches = arr.filter(item => item.parentId === +key)
+        for (let branch of branches) {
+            list[key][branch.id] = {};
+        }
+    }
+    if (keys.length === 1) {
+        main = keys[0]
+    } else {
+        for (let key of keys) {
+            const subBranches = arr.filter(item => item.parentId === +key);
+            if (subBranches.length === 0) {
+                continue
+            } else {
+                main = key;
+                break
+
+            }
+        }
+
+
+
+    }
+
+
+
+    list = list[main]
+    } 
+
+
+
+}
+
