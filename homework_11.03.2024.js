@@ -180,3 +180,60 @@ function drawTree1(arr, list) {
 
 }
 
+
+//edited 24.03.2024 23:06
+// tree1 by recursion, but with IF
+
+
+function drawTree1(arr, list) {
+    debugger;
+    let main;
+
+
+    let member = arr.find(obj => obj.parentId === null);
+    if (member) {
+        list[member.id] = {};
+    }
+
+
+    const keys = Object.keys(list);
+
+    if (!keys.length) {
+        return
+    }
+
+    keys.forEach(key => {
+        const branches = arr.filter(obj => obj.parentId === +key)
+        for (let branch of branches) {
+
+            list[key][branch.id] = {};
+        }
+
+
+    });
+
+    if (keys.length === 1) {
+        main = keys[0]
+    } else {
+        for (let key of keys) {
+            const subBranches = arr.filter(item => item.parentId === +key);
+            if (subBranches.length === 0) {
+                continue
+            } else {
+                main = key;
+                break
+
+            }
+        }
+    }
+
+
+    list = list[main];
+
+    arr.shift();
+
+    return drawTree1(arr, list);
+
+}
+
+
