@@ -1,0 +1,53 @@
+#header {
+    margin: 0 auto;
+    max-width: 1200px;
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+
+
+}
+
+#type {
+    display: flex;
+    margin: 20px auto;
+    max-width: 1200px;
+    /* height: 600px; */
+}
+
+#right{
+    margin: 10px auto;
+    height: 400px;
+}
+
+#ul{
+    height: 600px;
+}
+
+
+
+#byBreed #bySubBreed{
+    margin: 0 auto;
+    max-width: 1000px;
+    height: 300px;
+    /* display: flex;
+    justify-content: space-around; */
+  } 
+
+.imgByBreed {
+    width: auto;
+    height: 150px;
+    margin: 2px;
+}
+
+.imgBySubBreed {
+    width: auto;
+    height: 150px;
+    margin: 2px;
+}
+
+.img {
+    width: auto;
+    height: 300px;
+    margin: 5px;
+}
