@@ -106,8 +106,8 @@ class Book {
         this._quantity = value;
     }
 
-    author(Author) {
-        const author = new Author(Author);
+    author(credental) {
+        const author = new Author(credental);
         return author.name;
     }
 
@@ -316,8 +316,8 @@ the exams(grade is great or equal to 50), its year should be increased by one.
 */
 
 class Student extends Person{
-    constructor(programs = [], year, fee){    
-        super();
+    constructor(programs = [], year, fee, firstName, lastName, gender, age){    
+        super(firstName, lastName, gender, age);
         this.programs = programs;
         this.year = year;
         this.fee = fee;
@@ -391,8 +391,8 @@ class Student extends Person{
 */
 
 class Teacher extends Person{
-    constructor(program, pay){
-        super();
+    constructor(program, pay, firstName, lastName, gender, age){
+        super(firstName, lastName, gender, age);
         this.name = super.name;
         this.pay = pay;
         
